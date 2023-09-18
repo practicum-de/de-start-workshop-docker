@@ -128,4 +128,4 @@ docker system prune --all
 docker image prune -a
 ```
 
-В Docker Desktop очистка находится под кнопкой Troubleshoot с жучком рядом с настройками
+В Docker Desktop очистка находится под кнопкой Troubleshoot с жучком рядом с настройками. УДАЛЯТСЯ ВСЕ КОНТЕЙНЕРЫ, ОБРАЗЫ, ВОЛЬЮМЫ КАК ПРИ `docker system prune --all`
