@@ -50,6 +50,24 @@ docker run -d --rm -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 docker run -d --rm -e POSTGRES_PASSWORD=password -p 5432:5432 -v C:\Users\Artemiy\Documents\pg_data:/var/lib/postgresql/data postgres
 ```
 
+Также существуют docker volume - особый способ хранения данных. Данные из них доступны только из контейнеров (но можно и извлечь данные из них, через десктоп просто и удобно)
+
+
+Создаются командой
+```
+docker volume create <название>
+```
+
+Пример использования
+
+```
+docker volume create pgdata
+
+docker run -d --rm -e POSTGRES_PASSWORD=password -p 5432:5432 -v pgdata:/var/lib/postgresql/data postgres
+```
+
+
+
 Посмотреть логи можно с помощью команды
 ```
 docker logs
@@ -109,7 +127,7 @@ docker run --rm -d -p 7010:8000 --name de-sprint-1-server-local cr.yandex/crp1r8
 Подключим volume
 Важно, чтобы подключенная директория, была пустой
 ```
-docker run -d -v /home/<username>/de_lessons/sprint1:/s1-lessons --rm -p 7010:8000 --name=de-sprint-1-server-local cr.yandex/crp1r8pht0n0gl25aug1/de-sprint-1-v2:latest
+docker run -d -v ~/de_lessons/sprint1:/s1-lessons --rm -p 7010:8000 --name=de-sprint-1-server-local cr.yandex/crp1r8pht0n0gl25aug1/de-sprint-1-v2:latest
 ```
 Если директория, которую мы укажем, была не пустой - все файлы, которые в ней должны были быть в образе, как при запуске без вольюма - не появятся
 
