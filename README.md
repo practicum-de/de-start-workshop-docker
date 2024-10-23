@@ -119,7 +119,7 @@ docker compose down -v
 
 ###
 
-Запуск контейнера из 1 спринта https://practicum.yandex.ru/learn/data-engineer/courses/dd73421d-bf74-4f2d-9b5f-c45d7d258b00/sprints/125752/topics/3f0a5098-425a-40be-9fff-a1df6bcb5532/lessons/e229854f-9e81-40fc-bb2e-314e17116d42/
+Запуск контейнера из 1 спринта https://github.com/practicum-de/de-project-bibip/blob/main/docker-compose.yaml
 ```
 docker run --rm -d -p 7010:8000 --name de-sprint-1-server-local cr.yandex/crp1r8pht0n0gl25aug1/de-sprint-1-v2:latest 
 ```
@@ -127,7 +127,7 @@ docker run --rm -d -p 7010:8000 --name de-sprint-1-server-local cr.yandex/crp1r8
 Подключим volume
 Важно, чтобы подключенная директория была пустой
 ```
-docker run -d -v ~/de_lessons/sprint1:/s1-lessons --rm -p 7010:8000 --name=de-sprint-1-server-local cr.yandex/crp1r8pht0n0gl25aug1/de-sprint-1-v2:latest
+path_to_your_directory
 ```
 Если директория, которую мы укажем, была не пустой - все файлы, которые в ней должны были быть в образе, как при запуске без вольюма - не появятся
 
